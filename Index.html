@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InovaData</title>
+    <link rel="icon" href="inovadata.svg" type="image/svg">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            color: #333;
+            margin: 0;
+            padding-top: 70px;
+            /* Ajuste para levar em conta a altura da navbar fixa */
+        }
+
+        p {
+            color: #666;
+            text-indent: 30px;
+        }
+
+        .navbar {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #ccc;
+            min-height: 50px;
+        }
+
+        .navbar-brand {
+            color: #333;
+        }
+
+        .navbar-nav .nav-link {
+            color: #333;
+        }
+
+        .section.banner {
+            background: linear-gradient(to bottom, #f8f9fa, #444);
+            /* Gradiente a partir da cor da header */
+            color: #fff;
+            padding-top: 80px;
+            /* Espaço extra para distanciar do topo */
+            height: calc(100vh - 70px);
+            /* Ajustado para levar em conta a barra de navegação fixa */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 20px;
+            /* Adicionando espaço de uma linha entre o banner e a próxima seção */
+        }
+
+        .section.banner h1 {
+            font-size: 2.5rem;
+            padding-bottom: 20px;
+        }
+
+        .btn-saiba-mais {
+            background-color: #fff;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn-saiba-mais:hover {
+            background-color: #ccc;
+        }
+
+        .section {
+            padding: 30px 0;
+        }
+
+        /* Aplica um fundo para seções ímpares */
+        section:nth-child(odd) {
+            background: linear-gradient(to bottom, #f8f9fa, #444);
+        }
+
+        /* Aplica um fundo para seções pares */
+        section:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        #membros a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        #membros a:hover {
+            color: #666;
+        }
+
+        #contato a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        #contato a:hover {
+            color: #000;
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            border-top: 1px solid #ccc;
+            color: #666;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* Estilo para a foto redonda nos cards de membros */
+        .card-profile-pic {
+            width: 150px;
+            height: 150px;
+            margin-top: 20px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Adicionando posicionamento fixo para a navbar */
+        header {
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="inovadata.svg" alt="InovaData Logo" style="height: 50px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active"><a class="nav-link" href="#inicio">Início</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#quemsomos">Quem Somos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#membros">Membros do Time</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="section banner">
+            <div class="container">
+                <h1>Bem-vindos ao Futuro da Tecnologia em Negócios</h1>
+                <a href="#quemsomos" class="btn btn-saiba-mais btn-lg">Saiba Mais</a>
+            </div>
+        </section>
+
+        <section id="quemsomos" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="inovadata1.png" class="img-fluid" alt="Imagem 1">
+                    </div>
+                    <div class="col-md-6">
+                        <p>
+                            A InovaData é composta por profissionais altamente qualificados e apaixonados, que possuem o
+                            propósito de gerar impacto para os nossos clientes e para a sociedade! Trazemos ao mercado
+                            uma riqueza de conhecimentos e experiências em TI, gestão de projetos, análise de dados,
+                            automação, recursos humanos, gestão financeira, customer success e desenvolvimento web.
+                            Nossos profissionais destacam-se pela abordagem multidisciplinar e colaborativa, pronta para
+                            enfrentar os desafios atuais e futuros, impulsionando a inovação, o crescimento sustentável
+                            e humanizado.
+                        </p>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-md-6 order-md-2">
+                        <!-- Barra de progresso -->
+                        <div class="progress mb-4" style="height: 30px;">
+                            <div class="progress-bar bg-dark" role="progressbar" style="width: 60%;" aria-valuenow="60"
+                                aria-valuemin="0" aria-valuemax="100">Visão Sistêmica</div>
+                            <div class="progress-bar bg-light text-dark" role="progressbar" style="width: 40%;"
+                                aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">Mapeamento de Processos</div>
+                        </div>
+                        <div class="progress mb-4" style="height: 30px;">
+                            <div class="progress-bar bg-dark" role="progressbar" style="width: 70%;" aria-valuenow="70"
+                                aria-valuemin="0" aria-valuemax="100">Liderança</div>
+                            <div class="progress-bar bg-light text-dark" role="progressbar" style="width: 30%;"
+                                aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">Resolução de Problemas</div>
+                        </div>
+                        <div class="progress mb-4" style="height: 30px;">
+                            <div class="progress-bar bg-dark" role="progressbar" style="width: 65%;" aria-valuenow="65"
+                                aria-valuemin="0" aria-valuemax="100">Trabalho em Equipe</div>
+                            <div class="progress-bar bg-light text-dark" role="progressbar" style="width: 35%;"
+                                aria-valuenow="35" aria-valuemin="0" aria-valuemax="100">Comunicação</div>
+                        </div>
+                        <div class="progress mb-4" style="height: 30px;">
+                            <div class="progress-bar bg-dark" role="progressbar" style="width: 75%;" aria-valuenow="75"
+                                aria-valuemin="0" aria-valuemax="100">Criatividade</div>
+                            <div class="progress-bar bg-light text-dark" role="progressbar" style="width: 25%;"
+                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Pensamento Crítico</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 order-md-1">
+                        <p>
+                            Faz toda a diferença contar com quem pode transformar ideias em realidade! Por isso, nossa
+                            equipe conta com profissionais com mais de uma década de experiência em desenvolvimento de
+                            software, gestão de ERP e análises de soluções sênior em ambientes de alta pressão,
+                            possuindo uma fundação sólida em tecnologias de ponta. Nossa expertise abrange desde o
+                            desenvolvimento de soluções de automação de processos e pipelines de dados até a criação de
+                            interfaces web elegantes e funcionais, e sistemas robustos e escaláveis.
+                        </p>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-md-6">
+                        <img src="inovadata2.png" class="img-fluid" alt="Imagem 2">
+                    </div>
+                    <div class="col-md-6">
+                        <p>
+                            Além disso, somamos conhecimentos em tecnologia com a expertise em gestão de recursos
+                            humanos e departamento pessoal, gestão financeira e gestão de projetos, trazendo um profundo
+                            conhecimento em coordenação de equipes e mediação de conflitos, otimização e análise de
+                            processos, implementação de melhorias contínuas, resolução de problemas, administração de
+                            recursos escassos, análise e monitoramento de indicadores de desempenho e apresentações de
+                            resultados. Todos esses conhecimentos são alinhados com a busca de inovações para as
+                            empresas.
+                        </p>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-md-6 order-md-2">
+                        <img src="inovadata3.png" class="img-fluid" alt="Imagem 3">
+                    </div>
+                    <div class="col-md-6 order-md-1">
+                        <p>
+                            Somos uma equipe comprometida em oferecer soluções eficazes e inovadoras para os desafios de
+                            negócios atuais e futuros. Nossa paixão pela tecnologia e pela inovação nos impulsiona a
+                            buscar constantemente novos conhecimentos e a desenvolver habilidades para atender às
+                            demandas do mercado. Estamos empenhados em construir relacionamentos sólidos com nossos
+                            clientes e parceiros, oferecendo um serviço excepcional e agregando valor a cada projeto.
+                            Junte-se a nós em nossa jornada para transformar o mundo dos negócios através da tecnologia!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre" class="section">
+            <div class="container">
+                <h2 class="text-center mb-5">Sobre Nós</h2>
+                <div class="row">
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">Missão</h4>
+                                <p class="card-text">
+                                    Empoderar empresas através da tecnologia, transformando desafios em oportunidades de
+                                    inovação e crescimento.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">Visão</h4>
+                                <p class="card-text">
+                                    Ser reconhecido globalmente como o principal catalisador de inovação e sucesso em
+                                    negócios tecnológicos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">Valores</h4>
+                                <p class="card-text">
+                                    Inovação, Colaboração, Excelência, Integridade, Paixão pela Tecnologia.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="membros" class="section">
+            <div class="container">
+                <h2 class="text-center mb-5">Membros do Time</h2>
+                <div class="row">
+                    <!-- Cartão para Membro 1 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <a href="https://inova.iti.ufscar.br/user/view.php?id=2033&course=27" target="_blank">
+                                <img src="https://i.postimg.cc/C1WwdygH/Alan.jpg"
+                                    class="mx-auto d-block img-fluid img-thumbnail card-profile-pic"
+                                    alt="Imagem de Alan Fernando Cristensen">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title text-center">
+                                    <a href="https://inova.iti.ufscar.br/user/view.php?id=2033&course=27"
+                                        target="_blank">
+                                        Alan Fernando Cristensen
+                                    </a>
+                                </h5>
+                                <h6 class="card-subtitle mb-2 text-muted text-center">
+                                    Especialista em TI e Automação de Dados
+                                </h6>
+                                <p class="card-text justify-text">
+                                    Alan é nosso especialista em TI e automação de dados.
+                                    Sua capacidade de solucionar problemas rapidamente e liderar projetos é essencial.
+                                    Ele é resiliente, comunicativo e apaixonado por inovação. Seu conhecimento em Python
+                                    e automação é um diferencial valioso.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fim Cartão para Membro 1 -->
+                    <!-- Cartão para Membro 2 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <a href="https://inova.iti.ufscar.br/user/view.php?id=2053&course=27" target="_blank">
+                                <img src="https://i.postimg.cc/qRtkkJ9v/Ana.jpg"
+                                    class="mx-auto d-block img-fluid img-thumbnail card-profile-pic"
+                                    alt="Ana Claudia da Silva">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title text-center">
+                                    <a href="https://inova.iti.ufscar.br/user/view.php?id=2053&course=27"
+                                        target="_blank">
+                                        Ana Claudia da Silva
+                                    </a>
+                                </h5>
+                                <h6 class="card-subtitle mb-2 text-muted text-center">
+                                    Especialista em Melhoria Contínua e Gestão de Recursos Humanos
+                                </h6>
+                                <p class="card-text justify-text">
+                                    Ana Claudia é nossa especialista em melhoria contínua
+                                    e gestão de recursos humanos. Sua visão sistêmica e habilidades em análise de
+                                    processos internos são cruciais para otimizar nossas operações. Ela é autêntica,
+                                    apaixonada por desafios e está sempre em busca de melhorias.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fim Cartão para Membro 2 -->
+                    <!-- Cartão para Membro 3 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <a href="https://inova.iti.ufscar.br/user/view.php?id=2054&course=27" target="_blank">
+                                <img src="https://i.postimg.cc/T1gfDk28/Anna.jpg"
+                                    class="mx-auto d-block img-fluid img-thumbnail card-profile-pic"
+                                    alt="Anna Karolina Barbosa da Costa">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title text-center">
+                                    <a href="https://inova.iti.ufscar.br/user/view.php?id=2054&course=27"
+                                        target="_blank">
+                                        Anna Karolina Barbosa da Costa
+                                    </a>
+                                </h5>
+                                <h6 class="card-subtitle mb-2 text-muted text-center">
+                                    Especialista em Gestão Financeira e Análise de Dados
+                                </h6>
+                                <p class="card-text justify-text">
+                                    Anna Karolina é nossa gestora financeira e analista de
+                                    dados. Sua habilidade em análise estratégica, Excel e Power BI nos ajuda a tomar
+                                    decisões informadas. Ela é curiosa, comprometida e acredita que o trabalho em equipe
+                                    é a chave para o sucesso.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fim Cartão para Membro 3 -->
+                    <!-- Cartão para Membro 4 -->
+                    <div class="col-md-4 mb-4 offset-md-2">
+                        <div class="card">
+                            <a href="https://inova.iti.ufscar.br/user/view.php?id=2055&course=27" target="_blank">
+                                <img src="https://i.postimg.cc/Wpk2C4G9/Daniel.jpg"
+                                    class="mx-auto d-block img-fluid img-thumbnail card-profile-pic"
+                                    alt="Daniel Amorim de Souza">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title text-center">
+                                    <a href="https://inova.iti.ufscar.br/user/view.php?id=2055&course=27"
+                                        target="_blank">
+                                        Daniel Amorim de Souza
+                                    </a>
+                                </h5>
+                                <h6 class="card-subtitle mb-2 text-muted text-center">
+                                    Especialista em Customer Success
+                                </h6>
+                                <p class="card-text justify-text">
+                                    Daniel é nosso especialista em Customer Success e
+                                    tecnologia. Sua habilidade em manter relacionamentos sólidos com os clientes e sua
+                                    experiência em SaaS garantem a satisfação contínua. Ele é resiliente, focado em
+                                    resultados e um verdadeiro entusiasta da inovação.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fim Cartão para Membro 4 -->
+                    <!-- Cartão para Membro 5 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <a href="https://inova.iti.ufscar.br/user/view.php?id=2056&course=27" target="_blank">
+                                <img src="https://i.postimg.cc/xTV02Sg9/Eduardo.jpg"
+                                    class="mx-auto d-block img-fluid img-thumbnail card-profile-pic"
+                                    alt="Eduardo Henrique Zuffo">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title text-center">
+                                    <a href="https://inova.iti.ufscar.br/user/view.php?id=2056&course=27"
+                                        target="_blank">
+                                        Eduardo Henrique Zuffo
+                                    </a>
+                                </h5>
+                                <h6 class="card-subtitle mb-2 text-muted text-center">
+                                    Especialista em Desenvolvimento Web
+                                </h6>
+                                <p class="card-text justify-text">
+                                    Eduardo é nosso desenvolvedor web e líder técnico. Seu
+                                    conhecimento em programação e habilidades em PHP, HTML, JavaScript, CSS e Bootstrap
+                                    são fundamentais para criar interfaces web eficientes. Além disso, sua capacidade de
+                                    liderança técnica e resolução de problemas torna nossa equipe mais forte.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fim Cartão para Membro 5 -->
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="section">
+            <div class="container">
+                <h2 class="text-center mb-2">Contato</h2>
+                <div class="text-center">
+                    <p>Link do perfil dos membros no ambiente Inova ITI:</p>
+                    <div>
+                        <a href="https://inova.iti.ufscar.br/user/view.php?id=2033&course=27" target="_blank">
+                            Alan Fernando Cristensen
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://inova.iti.ufscar.br/user/view.php?id=2053&course=27" target="_blank">
+                            Ana Claudia da Silva
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://inova.iti.ufscar.br/user/view.php?id=2054&course=27" target="_blank">
+                            Anna Karolina Barbosa da Costa
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://inova.iti.ufscar.br/user/view.php?id=2055&course=27" target="_blank">
+                            Daniel Amorim de Souza
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://inova.iti.ufscar.br/user/view.php?id=2056&course=27" target="_blank">
+                            Eduardo Henrique Zuffo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-dark text-light text-center py-4">
+        <div class="container">
+            © 2024 InovaData. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // Aplica a lógica de rolagem suave aos links na navbar e ao botão "Saiba Mais"
+            $('.navbar-nav .nav-link, .btn-saiba-mais').click(function(e) {
+                // Previne o comportamento padrão do link
+                e.preventDefault();
+        
+                // Fecha o menu comprimido
+                $('.navbar-collapse').collapse('hide');
+        
+                // Pega o valor do atributo href do link ou botão
+                var target = $(this).attr('href');
+        
+                // Se o link for para uma seção na mesma página
+                if (target.startsWith('#')) {
+                    // Calcula a posição do alvo
+                    var targetPos = $(target).offset().top;
+        
+                    // Ajusta a posição para a altura da navbar, altere o valor 70 conforme necessário
+                    var navbarHeight = 70;
+                    var scrollToPos = targetPos - navbarHeight;
+        
+                    // Anima a rolagem para a posição ajustada
+                    $('html, body').animate({
+                        scrollTop: scrollToPos
+                    }, 600); // 600 é a duração da animação em milissegundos
+                }
+            });
+        
+            // Fecha o menu comprimido ao clicar fora dele
+            $(document).click(function(event) {
+                var clickover = $(event.target);
+                var isOpen = $(".navbar-collapse").hasClass("show");
+                if (isOpen === true && !clickover.hasClass("navbar-toggler") && !clickover.hasClass("navbar-collapse")) {
+                    $(".navbar-toggler").click();
+                }
+            });
+        
+            // Lógica de rolagem suave ao clicar no logotipo da navbar
+            $('.navbar-brand').click(function(e) {
+                e.preventDefault();
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 600);
+            });
+        });
+        </script>
+        
+        
+
+
+
+</body>
+
+</html>
